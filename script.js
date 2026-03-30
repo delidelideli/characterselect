@@ -22,8 +22,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     confirmBtn.addEventListener('click', () => {
         if (selectedSlot) {
-            alert(`You have chosen the path of the ${selectedSlot.toUpperCase()}. Prepare to die.`);
-            // Here you could redirect to another page or start the game
+            const deathPopup = document.getElementById('deathPopup');
+            const chosenClassText = document.getElementById('chosenClassText');
+            
+            chosenClassText.textContent = `THE PATH OF THE ${selectedSlot.toUpperCase()} HAS BEEN CHOSEN`;
+            deathPopup.classList.add('show');
+
+            // Hide after 5 seconds and reset
+            setTimeout(() => {
+                deathPopup.classList.remove('show');
+            }, 5000);
         }
     });
 
