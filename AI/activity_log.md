@@ -19,13 +19,15 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The border rotation animation has been slowed down by 30%.
+**Current Status:** The background has been enhanced with glowing ember particles and more dynamic firelight.
 
-## Summary of actions taken (2026-03-30) - Update 15
+## Summary of actions taken (2026-03-30) - Update 16
 
-1.  **Animation Refinement:**
-    -   **Slower Rotation:** Adjusted the "Glow Beam" animation duration from `2s` to `2.6s` in `style.css`. This makes the rotation 30% slower, as requested, for a more deliberate and weighty visual effect.
+1.  **Background Visual Enhancement:**
+    -   **Ember Particles:** Added a new `createEmbers` function in `script.js` to generate glowing orange and red particles that rise and drift across the screen.
+    -   **Dynamic Pulse:** Updated the `bgPulse` animation in `style.css` to include `brightness` shifts, simulating the flickering of a nearby fire.
+    -   **Particle Variety:** Maintained the existing ash particles but reduced their opacity to let the new, glowing embers take center stage.
 
 2.  **Version Control:**
-    -   Committed animation speed adjustment.
+    -   Committed background enhancements.
     -   Pushed updates to `main` and `gh-pages` branches.

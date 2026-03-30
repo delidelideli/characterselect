@@ -66,19 +66,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     createAsh();
+    createEmbers();
 });
 
 function createAsh() {
     const container = document.getElementById('ashContainer');
     if (!container) return;
     
-    const count = 60;
+    const count = 40;
     for (let i = 0; i < count; i++) {
         const ash = document.createElement('div');
         ash.className = 'ash';
         
-        const size = Math.random() * 3 + 1;
-        const duration = Math.random() * 5 + 5;
+        const size = Math.random() * 2 + 1;
+        const duration = Math.random() * 5 + 8;
         const delay = Math.random() * 10;
         const left = Math.random() * 100;
 
@@ -90,5 +91,35 @@ function createAsh() {
         ash.style.animationDelay = `${delay}s`;
         
         container.appendChild(ash);
+    }
+}
+
+function createEmbers() {
+    const container = document.getElementById('ashContainer');
+    if (!container) return;
+    
+    const count = 30;
+    for (let i = 0; i < count; i++) {
+        const ember = document.createElement('div');
+        ember.className = 'ember-particle';
+        
+        const size = Math.random() * 3 + 2;
+        const duration = Math.random() * 4 + 6;
+        const delay = Math.random() * 10;
+        const left = Math.random() * 100;
+
+        ember.style.width = `${size}px`;
+        ember.style.height = `${size}px`;
+        ember.style.left = `${left}vw`;
+        ember.style.bottom = `-20px`;
+        ember.style.setProperty('--duration', `${duration}s`);
+        ember.style.animationDelay = `${delay}s`;
+        
+        // Vary colors for "Estus" feel
+        const colors = ['#ff4500', '#f59e0b', '#ff8c00'];
+        ember.style.color = colors[Math.floor(Math.random() * colors.length)];
+        ember.style.backgroundColor = 'currentColor';
+        
+        container.appendChild(ember);
     }
 }
