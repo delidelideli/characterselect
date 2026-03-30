@@ -19,14 +19,20 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The "SELECT CLASS" title has been updated with an orange glow.
+**Current Status:** All changes have been finalized and documented in a new Master Design Document.
 
-## Summary of actions taken (2026-03-30) - Update 12
+## Summary of actions taken (2026-03-30) - Update 13
 
-1.  **Main Title Styling:**
-    -   **Color Change:** Updated the "SELECT CLASS" title to use the **Estus Orange** (`#F59E0B`) color.
-    -   **Glow Effect:** Added a multi-layered orange text-shadow to create a smoldering glow effect, matching the interactive and subtext elements.
+1.  **Documentation Update:**
+    -   Synthesized all user refinements into a new master document: `DesignDoc_Final.md`.
+    -   **Final Specs Included:**
+        -   Lancer class replacement.
+        -   Upright class name positioning at the top of slots.
+        -   Stats repositioned directly below class names.
+        -   Centered main title with orange glow effects.
+        -   Enhanced "Prepare to Die" screen styling (centered, orange, large subtext).
+        -   Specific rules for hiding text in collapsed side-slots.
 
 2.  **Version Control:**
-    -   Committed title styling updates.
-    -   Pushed updates to `main` and `gh-pages` branches.
+    -   Committed the final design document and activity log.
+    -   Pushed all updates to `main` and `gh-pages` branches.
