@@ -71,9 +71,10 @@ body {
     font-family: 'Cinzel Decorative', serif;
     font-size: 3rem;
     letter-spacing: 12px;
-    color: var(--text-parchment);
+    color: var(--accent); /* Estus Orange */
     text-transform: uppercase;
     text-align: center;
+    text-shadow: 0 0 20px rgba(245, 158, 11, 0.6), 0 0 40px rgba(245, 158, 11, 0.3);
 }
 
 /* 12-Column Grid Container */

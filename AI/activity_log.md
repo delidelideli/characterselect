@@ -19,15 +19,14 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The "Prepare to Die" screen has been visually enhanced.
+**Current Status:** The "SELECT CLASS" title has been updated with an orange glow.
 
-## Summary of actions taken (2026-03-30) - Update 11
+## Summary of actions taken (2026-03-30) - Update 12
 
-1.  **"Prepare to Die" Screen Refinement:**
-    -   **Subtext Styling:** The "PATH HAS BEEN CHOSEN" subtext is now perfectly centered below the "PREPARE TO DIE" headline.
-    -   **Typography:** Increased the font size of the subtext to `2.5rem` and changed its color to **Estus Orange** (`#F59E0B`) for better contrast and thematic consistency.
-    -   **Visual Polish:** Added an orange text-shadow to the subtext to give it a glowing, "ember" feel.
+1.  **Main Title Styling:**
+    -   **Color Change:** Updated the "SELECT CLASS" title to use the **Estus Orange** (`#F59E0B`) color.
+    -   **Glow Effect:** Added a multi-layered orange text-shadow to create a smoldering glow effect, matching the interactive and subtext elements.
 
 2.  **Version Control:**
-    -   Committed visual enhancements.
+    -   Committed title styling updates.
     -   Pushed updates to `main` and `gh-pages` branches.
