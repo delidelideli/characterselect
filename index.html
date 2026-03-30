@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Character Selection | Dark Souls Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="overlay"></div>
+    <main class="character-select">
+        <header class="title-container">
+            <h1 class="main-title">SELECT CLASS</h1>
+        </header>
+        
+        <div class="character-grid">
+            <div class="character-slot" data-class="warrior">
+                <div class="slot-bg"></div>
+                <div class="slot-content">
+                    <h2 class="class-name">WARRIOR</h2>
+                    <div class="class-description">
+                        Fearless warrior. High strength and dexterity.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="character-slot" data-class="sorcerer">
+                <div class="slot-bg"></div>
+                <div class="slot-content">
+                    <h2 class="class-name">SORCERER</h2>
+                    <div class="class-description">
+                        Master of soul arts. High intelligence and attunement.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="character-slot" data-class="pyromancer">
+                <div class="slot-bg"></div>
+                <div class="slot-content">
+                    <h2 class="class-name">PYROMANCER</h2>
+                    <div class="class-description">
+                        Wielder of flame. Balanced strength and intelligence.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="character-slot" data-class="cleric">
+                <div class="slot-bg"></div>
+                <div class="slot-content">
+                    <h2 class="class-name">CLERIC</h2>
+                    <div class="class-description">
+                        Devout follower of the gods. High faith and attunement.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="character-slot" data-class="bandit">
+                <div class="slot-bg"></div>
+                <div class="slot-content">
+                    <h2 class="class-name">BANDIT</h2>
+                    <div class="class-description">
+                        Agile survivalist. High dexterity and endurance.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="selection-footer">
+            <div class="confirm-btn" id="confirmSelection">CONFIRM</div>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

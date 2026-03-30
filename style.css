@@ -1,0 +1,198 @@
+:root {
+    --bg-dark: #000000;
+    --bg-mid: #1a1a1a;
+    --accent: #d4af37; /* Gold */
+    --accent-dim: #8b732e;
+    --highlight: #ff4500; /* Fire Orange */
+    --text-color: #e0e0e0;
+    --text-secondary: #a0a0a0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-color);
+    font-family: 'Lora', serif;
+    overflow: hidden;
+    height: 100vh;
+}
+
+h1, h2, h3 {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 2px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, transparent 40%, rgba(0,0,0,0.8) 100%);
+    pointer-events: none;
+    z-index: 10;
+}
+
+.character-select {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 2rem;
+    z-index: 5;
+}
+
+.title-container {
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--accent-dim);
+    padding-bottom: 1rem;
+}
+
+.main-title {
+    font-size: 2.5rem;
+    color: var(--accent);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.character-grid {
+    display: flex;
+    flex: 1;
+    gap: 0.5rem;
+    padding: 1rem 0;
+}
+
+.character-slot {
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: var(--bg-mid);
+}
+
+.slot-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(26, 26, 26, 0.4) 0%, rgba(0, 0, 0, 0.9) 100%);
+    transition: all 0.4s ease;
+    z-index: 1;
+}
+
+.slot-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+    padding: 1.5rem;
+    transition: transform 0.4s ease;
+}
+
+.class-name {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    transition: color 0.4s ease;
+}
+
+.class-description {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+    line-height: 1.4;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.4s ease;
+}
+
+/* Hover States */
+.character-slot:hover {
+    flex: 1.5;
+    border-color: var(--accent);
+    box-shadow: inset 0 0 50px rgba(0,0,0,0.5), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.character-slot:hover .slot-bg {
+    background: linear-gradient(180deg, rgba(40, 40, 40, 0.2) 0%, rgba(10, 10, 10, 0.8) 100%);
+}
+
+.character-slot:hover .class-name {
+    color: var(--accent);
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.character-slot:hover .class-description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Active State */
+.character-slot.active {
+    flex: 1.8;
+    border-color: var(--highlight);
+    box-shadow: 0 0 30px rgba(255, 69, 0, 0.3);
+}
+
+.character-slot.active .class-name {
+    color: var(--highlight);
+    font-weight: bold;
+}
+
+.character-slot.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--highlight);
+    box-shadow: 0 0 10px var(--highlight);
+    z-index: 3;
+}
+
+.selection-footer {
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--accent-dim);
+    margin-top: 1rem;
+}
+
+.confirm-btn {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2rem;
+    padding: 0.8rem 3rem;
+    border: 1px solid var(--accent-dim);
+    color: var(--accent-dim);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 4px;
+}
+
+.confirm-btn:hover {
+    background: var(--accent);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px var(--accent);
+}
+
+.confirm-btn.enabled {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+/* Background Embers Animation Placeholder */
+@keyframes embers {
+    0% { transform: translateY(0) scale(1); opacity: 0; }
+    50% { opacity: 0.5; }
+    100% { transform: translateY(-100px) scale(0.5); opacity: 0; }
+}
