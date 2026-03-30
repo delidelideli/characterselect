@@ -19,24 +19,22 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The website has been completely recreated according to the "Embers of Choice" design document.
+**Current Status:** The website has been significantly enhanced with dynamic animations and immersive atmospheric effects.
 
-## Summary of actions taken (2026-03-30) - Update 3
+## Summary of actions taken (2026-03-30) - Update 4
 
-1.  **Full Design Recreation ("Embers of Choice"):**
-    -   **Visual Overhaul:** 
-        -   Applied the "Desperate Majesty" theme with a `#050505` background and `#F59E0B` (Estus Orange) accents.
-        -   Added high-grain texture and rising ember particle effects.
-        -   Implemented internal glow effects on character slots.
-    -   **Typography:** Switched to "Cinzel" for headers (H1 at 4rem) and "EB Garamond" for lore-heavy body text.
-    -   **Layout & Interaction:**
-        -   Implemented a 12-column CSS Grid layout for the character selection.
-        -   **5-Box Slide:** Created a reactive layout where boxes expand/shrink using `grid-template-columns`.
-        -   **Weighty Click:** On selection, the chosen box expands to 80% width while others shrink to 5%, with a "heavy" 0.7s transition.
-        -   **Border Animation:** Added a "fuse-like" gradient animation that travels the perimeter of a slot on hover.
-        -   **Quick View:** Stats and lore descriptions now fade in with a 0.4s transition during hover or selection.
-    -   **Mobile Support:** Added a media query to stack the grid vertically on smaller screens.
+1.  **Animation & Interaction Refinements:**
+    -   **Reactive Hover Layout:** Re-implemented the "5-Box Slide" to include hover-based expansion. Character slots now subtly expand (1.5fr) on hover and return to equal width when not focused.
+    -   **Atmospheric Effects:**
+        -   **Improved Embers:** Increased particle count and added glowing box-shadows for a more "fiery" look.
+        -   **Smoke Puffs:** Added large, slow-moving radial gradient "smoke" puffs in the background to create depth and movement.
+        -   **Enhanced Grain:** Switched to a "dark-matter" grain texture for a more weathered, "forged" aesthetic.
+    -   **Visual Polish:**
+        -   **Internal Glow:** Strengthened the radial glow coming from the bottom of each slot.
+        -   **Border Fuse:** Intensified the `clip-path` animation with a glow effect.
+        -   **Death Popup:** Increased blur (20px) and scale animation for a more dramatic impact.
+        -   **Descriptions:** Switched lore descriptions to italicized "EB Garamond" for a more scholarly, "Dark Souls" feel.
 
 2.  **Version Control:**
-    -   Committed all structural, stylistic, and logic changes.
+    -   Committed all refinements.
     -   Pushed updates to `main` and `gh-pages` branches.

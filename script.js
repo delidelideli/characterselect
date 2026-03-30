@@ -5,81 +5,96 @@ document.addEventListener('DOMContentLoaded', () => {
     const smokeContainer = document.getElementById('smokeContainer');
     let selectedIndex = null;
 
+    // Helper to update grid columns
+    const updateGridColumns = (focusIndex, type = 'hover') => {
+        if (selectedIndex !== null && type === 'hover') return; // Don't override click selection with hover
+
+        let columns = [];
+        const count = slots.length;
+        
+        if (focusIndex === null) {
+            // Default: equal distribution
+            columns = Array(count).fill('1fr');
+        } else if (type === 'click') {
+            // Click: 80% for selected, 5% for others
+            for (let i = 0; i < count; i++) {
+                columns.push(i === focusIndex ? '80%' : '5%');
+            }
+        } else {
+            // Hover: Expanded focus (e.g., 2fr for hover, 1fr for others)
+            for (let i = 0; i < count; i++) {
+                columns.push(i === focusIndex ? '1.5fr' : '0.875fr');
+            }
+        }
+        grid.style.gridTemplateColumns = columns.join(' ');
+    };
+
     slots.forEach((slot, index) => {
+        // Hover Expansion
+        slot.addEventListener('mouseenter', () => updateGridColumns(index, 'hover'));
+        slot.addEventListener('mouseleave', () => updateGridColumns(null, 'hover'));
+
+        // Weighty Click
         slot.addEventListener('click', () => {
             selectedIndex = index;
-            
-            // Remove active class from all slots
             slots.forEach(s => s.classList.remove('active'));
-            
-            // Add active class to clicked slot
             slot.classList.add('active');
             
-            // Apply the "Weighty Click" layout (80% for selected, 5% for others)
-            // We use a 12-column approach or just percentages in grid-template-columns
-            let templateColumns = [];
-            for (let i = 0; i < slots.length; i++) {
-                if (i === index) {
-                    templateColumns.push('80%');
-                } else {
-                    templateColumns.push('5%');
-                }
-            }
-            grid.style.gridTemplateColumns = templateColumns.join(' ');
+            updateGridColumns(index, 'click');
             
-            // Enable confirm button
             confirmBtn.style.opacity = '1';
             confirmBtn.style.pointerEvents = 'all';
-            
-            console.log(`Selected: ${slot.getAttribute('data-class')}`);
+            confirmBtn.style.transform = 'translateY(0)';
         });
     });
 
     confirmBtn.addEventListener('click', () => {
         if (selectedIndex !== null) {
-            const selectedSlot = slots[selectedIndex];
-            const className = selectedSlot.getAttribute('data-class');
+            const className = slots[selectedIndex].getAttribute('data-class');
             const deathPopup = document.getElementById('deathPopup');
             const chosenClassText = document.getElementById('chosenClassText');
             
             chosenClassText.textContent = `THE PATH OF THE ${className.toUpperCase()} HAS BEEN CHOSEN`;
             deathPopup.classList.add('show');
 
-            // Optional: Reload or reset after some time
             setTimeout(() => {
                 deathPopup.classList.remove('show');
             }, 6000);
         }
     });
 
-    // Initialize particles
     createEmbers();
+    createSmoke();
 });
 
 function createEmbers() {
     const container = document.getElementById('smokeContainer');
-    const count = 40;
-
-    for (let i = 0; i < count; i++) {
+    for (let i = 0; i < 50; i++) {
         const ember = document.createElement('div');
         ember.className = 'ember';
-        
-        const size = Math.random() * 4 + 1;
-        const duration = Math.random() * 5 + 3;
-        const delay = Math.random() * 5;
-        const left = Math.random() * 100;
-
+        const size = Math.random() * 3 + 1;
         ember.style.width = `${size}px`;
         ember.style.height = `${size}px`;
-        ember.style.left = `${left}vw`;
-        ember.style.bottom = `-10px`;
-        ember.style.setProperty('--duration', `${duration}s`);
-        ember.style.animationDelay = `${delay}s`;
-        
-        // Varying colors for "Estus" feel
-        const colors = ['#F59E0B', '#ff4500', '#8b4513'];
-        ember.style.background = colors[Math.floor(Math.random() * colors.length)];
-
+        ember.style.left = `${Math.random() * 100}vw`;
+        ember.style.bottom = `-20px`;
+        ember.style.setProperty('--duration', `${Math.random() * 4 + 4}s`);
+        ember.style.animationDelay = `${Math.random() * 8}s`;
         container.appendChild(ember);
+    }
+}
+
+function createSmoke() {
+    const container = document.getElementById('smokeContainer');
+    for (let i = 0; i < 15; i++) {
+        const puff = document.createElement('div');
+        puff.className = 'smoke-puff';
+        const size = Math.random() * 300 + 200;
+        puff.style.width = `${size}px`;
+        puff.style.height = `${size}px`;
+        puff.style.left = `${Math.random() * 100 - 10}vw`;
+        puff.style.bottom = `${Math.random() * 20 - 10}vh`;
+        puff.style.setProperty('--duration', `${Math.random() * 10 + 10}s`);
+        puff.style.animationDelay = `${Math.random() * 10}s`;
+        container.appendChild(puff);
     }
 }
