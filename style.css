@@ -105,9 +105,9 @@ body {
 /* Class Name Elements */
 .collapsed-name {
     position: absolute;
-    top: 4rem; /* Aligned to top by default */
+    top: 4rem; /* Aligned to top */
     left: 50%;
-    transform: translateX(-50%); /* Upright by default */
+    transform: translateX(-50%); /* Upright always */
     font-family: 'Cinzel', serif;
     font-size: 1.8rem;
     letter-spacing: 4px;
@@ -119,22 +119,9 @@ body {
     z-index: 15;
 }
 
-/* Only rotate when the parent grid has a selection and this slot is NOT active (collapsed state) */
-.character-grid:has(.character-slot.active) .character-slot:not(.active) .collapsed-name {
-    transform: translateX(-50%) rotate(-90deg);
-    top: 50%; /* Center vertically when rotated */
-    opacity: 0.8;
-}
-
-/* Ensure text is hidden if slot is too narrow (e.g. 5%) to avoid cut-off */
-@container (max-width: 100px) {
-    .collapsed-name {
-        display: none;
-    }
-}
-/* Alternative for hide-text: Use JS or specific width checks */
-.character-grid[style*="5%"] .character-slot:not(.active) .collapsed-name,
-.character-grid[style*="5%"] .character-slot:not(.active) .quick-info {
+/* Hide text in very narrow collapsed boxes (5% width) or when another class is active */
+.character-grid:has(.character-slot.active) .character-slot:not(.active) .collapsed-name,
+.character-grid:has(.character-slot.active) .character-slot:not(.active) .quick-info {
     opacity: 0;
     visibility: hidden;
 }
