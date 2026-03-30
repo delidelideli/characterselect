@@ -282,7 +282,7 @@ body {
 .character-slot:hover .slot-border,
 .character-slot.active .slot-border {
     opacity: 1;
-    animation: rotateBorder 2s linear infinite;
+    animation: rotateBorder 2.6s linear infinite;
 }
 
 @keyframes rotateBorder {
