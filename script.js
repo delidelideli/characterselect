@@ -2,12 +2,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('characterGrid');
     const slots = document.querySelectorAll('.character-slot');
     const confirmBtn = document.getElementById('confirmSelection');
-    const smokeContainer = document.getElementById('smokeContainer');
+    const ashContainer = document.getElementById('ashContainer');
     let selectedIndex = null;
 
     // Helper to update grid columns
     const updateGridColumns = (focusIndex, type = 'hover') => {
-        if (selectedIndex !== null && type === 'hover') return; // Don't override click selection with hover
+        // If a class is selected (click), hover should not override the layout
+        if (selectedIndex !== null && type === 'hover') return;
 
         let columns = [];
         const count = slots.length;
@@ -16,12 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Default: equal distribution
             columns = Array(count).fill('1fr');
         } else if (type === 'click') {
-            // Click: 80% for selected, 5% for others
+            // Click: Selected takes 80%, others shrink to 5%
             for (let i = 0; i < count; i++) {
                 columns.push(i === focusIndex ? '80%' : '5%');
             }
         } else {
-            // Hover: Expanded focus (e.g., 2fr for hover, 1fr for others)
+            // Hover: Focus takes 1.5fr, others shrink slightly to 0.875fr
             for (let i = 0; i < count; i++) {
                 columns.push(i === focusIndex ? '1.5fr' : '0.875fr');
             }
@@ -30,21 +31,22 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     slots.forEach((slot, index) => {
-        // Hover Expansion
+        // Hover Logic
         slot.addEventListener('mouseenter', () => updateGridColumns(index, 'hover'));
         slot.addEventListener('mouseleave', () => updateGridColumns(null, 'hover'));
 
-        // Weighty Click
+        // Weighty Click Logic
         slot.addEventListener('click', () => {
+            // If already selected, maybe toggle back? For now, just re-select
             selectedIndex = index;
+            
             slots.forEach(s => s.classList.remove('active'));
             slot.classList.add('active');
             
             updateGridColumns(index, 'click');
             
-            confirmBtn.style.opacity = '1';
-            confirmBtn.style.pointerEvents = 'all';
-            confirmBtn.style.transform = 'translateY(0)';
+            // Show confirm button
+            confirmBtn.classList.add('visible');
         });
     });
 
@@ -59,42 +61,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
             setTimeout(() => {
                 deathPopup.classList.remove('show');
-            }, 6000);
+            }, 5000);
         }
     });
 
-    createEmbers();
-    createSmoke();
+    createAsh();
 });
 
-function createEmbers() {
-    const container = document.getElementById('smokeContainer');
-    for (let i = 0; i < 50; i++) {
-        const ember = document.createElement('div');
-        ember.className = 'ember';
+function createAsh() {
+    const container = document.getElementById('ashContainer');
+    if (!container) return;
+    
+    const count = 60;
+    for (let i = 0; i < count; i++) {
+        const ash = document.createElement('div');
+        ash.className = 'ash';
+        
         const size = Math.random() * 3 + 1;
-        ember.style.width = `${size}px`;
-        ember.style.height = `${size}px`;
-        ember.style.left = `${Math.random() * 100}vw`;
-        ember.style.bottom = `-20px`;
-        ember.style.setProperty('--duration', `${Math.random() * 4 + 4}s`);
-        ember.style.animationDelay = `${Math.random() * 8}s`;
-        container.appendChild(ember);
-    }
-}
+        const duration = Math.random() * 5 + 5;
+        const delay = Math.random() * 10;
+        const left = Math.random() * 100;
 
-function createSmoke() {
-    const container = document.getElementById('smokeContainer');
-    for (let i = 0; i < 15; i++) {
-        const puff = document.createElement('div');
-        puff.className = 'smoke-puff';
-        const size = Math.random() * 300 + 200;
-        puff.style.width = `${size}px`;
-        puff.style.height = `${size}px`;
-        puff.style.left = `${Math.random() * 100 - 10}vw`;
-        puff.style.bottom = `${Math.random() * 20 - 10}vh`;
-        puff.style.setProperty('--duration', `${Math.random() * 10 + 10}s`);
-        puff.style.animationDelay = `${Math.random() * 10}s`;
-        container.appendChild(puff);
+        ash.style.width = `${size}px`;
+        ash.style.height = `${size}px`;
+        ash.style.left = `${left}vw`;
+        ash.style.bottom = `-20px`;
+        ash.style.setProperty('--duration', `${duration}s`);
+        ash.style.animationDelay = `${delay}s`;
+        
+        container.appendChild(ash);
     }
 }

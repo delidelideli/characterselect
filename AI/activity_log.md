@@ -19,22 +19,26 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The website has been significantly enhanced with dynamic animations and immersive atmospheric effects.
+**Current Status:** The website has been upgraded to the "Final Desktop Master" specification from the new design document.
 
-## Summary of actions taken (2026-03-30) - Update 4
+## Summary of actions taken (2026-03-30) - Update 5
 
-1.  **Animation & Interaction Refinements:**
-    -   **Reactive Hover Layout:** Re-implemented the "5-Box Slide" to include hover-based expansion. Character slots now subtly expand (1.5fr) on hover and return to equal width when not focused.
-    -   **Atmospheric Effects:**
-        -   **Improved Embers:** Increased particle count and added glowing box-shadows for a more "fiery" look.
-        -   **Smoke Puffs:** Added large, slow-moving radial gradient "smoke" puffs in the background to create depth and movement.
-        -   **Enhanced Grain:** Switched to a "dark-matter" grain texture for a more weathered, "forged" aesthetic.
-    -   **Visual Polish:**
-        -   **Internal Glow:** Strengthened the radial glow coming from the bottom of each slot.
-        -   **Border Fuse:** Intensified the `clip-path` animation with a glow effect.
-        -   **Death Popup:** Increased blur (20px) and scale animation for a more dramatic impact.
-        -   **Descriptions:** Switched lore descriptions to italicized "EB Garamond" for a more scholarly, "Dark Souls" feel.
+1.  **"Final Desktop Master" Redesign:**
+    -   **Atmospheric Background:** Implemented a "Living Background" using a radial-gradient from `#050505` to a smoldering `#2A1005` (Deep Ember), pulsing to simulate flickering firelight.
+    -   **Typography Overhaul:**
+        -   **Headers:** Switched to "Cinzel Decorative" for the main title and selected class names (4rem).
+        -   **Stats:** Using "Cinzel" (bold) for stat labels.
+        -   **Lore:** Using "EB Garamond" (italicized) for the immersive description.
+    -   **The Character Stage:**
+        -   **3-Column Sub-Grid:** When a class is clicked, the expanded box (80% width) now reveals a detailed internal layout:
+            -   **Left:** Character render placeholder with glow effects.
+            -   **Center:** Class name and lore text.
+            -   **Right:** A comprehensive stat block (Vigor, Strength, etc.) featuring horizontal progress bars in "Estus Orange."
+    -   **Interaction Logic:**
+        -   **Ember Hover:** Quick-view stats fade in at the bottom of the slot on hover.
+        -   **Weighty Click:** Non-selected classes collapse to 5% width while the selected class takes the stage, using a slow `0.8s cubic-bezier` transition.
+    -   **Ash Particles:** Replaced previous ember effects with slow-drifting "ash" particles to match the specified theme.
+    -   **Desktop Optimization:** Locked the experience to a 16:9 aspect ratio focus as per the design constraints.
 
 2.  **Version Control:**
-    -   Committed all refinements.
-    -   Pushed updates to `main` and `gh-pages` branches.
+    -   Committed all changes to `main` and pushed to `gh-pages` for live deployment.

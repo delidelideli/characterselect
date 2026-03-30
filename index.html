@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Embers of Choice | Character Selection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Embers of Choice | Final Desktop Master</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="living-bg"></div>
     <div class="grain-overlay"></div>
-    <div class="smoke-container" id="smokeContainer"></div>
+    <div class="ash-container" id="ashContainer"></div>
     
     <main class="character-select">
         <header class="title-container">
@@ -20,76 +21,178 @@
             <!-- Warrior -->
             <div class="character-slot" data-class="warrior">
                 <div class="slot-border"></div>
-                <div class="slot-content">
-                    <h2 class="class-name">WARRIOR</h2>
-                    <div class="stats-container">
-                        <span class="stat">STR 16</span>
-                        <span class="stat">DEX 14</span>
+                
+                <!-- The Hover Content (Quick Info) -->
+                <div class="quick-info">
+                    <span class="stat-preview">STR: 16</span>
+                    <span class="stat-preview">DEX: 14</span>
+                </div>
+
+                <!-- The Stage Content (Revealed on Click) -->
+                <div class="stage-content">
+                    <div class="stage-visuals">
+                        <!-- Large scale character render placeholder -->
+                        <div class="character-render warrior-render"></div>
                     </div>
-                    <div class="class-description">
-                        Fearless warrior. A master of weapons, forged in the fires of a thousand battles. High strength and dexterity.
+                    
+                    <div class="stage-lore">
+                        <h2 class="stage-class-name">WARRIOR</h2>
+                        <p class="lore-text">Fearless warrior. A master of weapons, forged in the fires of a thousand battles. High strength and dexterity. They have traveled from the Northern Lands, seeking a lord to serve or a kingdom to conquer.</p>
+                    </div>
+
+                    <div class="stage-stats">
+                        <div class="stat-block">
+                            <span class="stat-label">VIGOR</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 55%;"></div></div>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-label">ATTUNEMENT</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 20%;"></div></div>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-label">ENDURANCE</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 60%;"></div></div>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-label">STRENGTH</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 80%;"></div></div>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-label">DEXTERITY</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 70%;"></div></div>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-label">RESISTANCE</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 50%;"></div></div>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-label">INTELLIGENCE</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 15%;"></div></div>
+                        </div>
+                        <div class="stat-block">
+                            <span class="stat-label">FAITH</span>
+                            <div class="stat-bar"><div class="stat-fill" style="width: 15%;"></div></div>
+                        </div>
                     </div>
                 </div>
+
+                <div class="collapsed-name">WARRIOR</div>
             </div>
             
             <!-- Sorcerer -->
             <div class="character-slot" data-class="sorcerer">
                 <div class="slot-border"></div>
-                <div class="slot-content">
-                    <h2 class="class-name">SORCERER</h2>
-                    <div class="stats-container">
-                        <span class="stat">INT 16</span>
-                        <span class="stat">ATT 15</span>
+                <div class="quick-info">
+                    <span class="stat-preview">INT: 16</span>
+                    <span class="stat-preview">ATT: 15</span>
+                </div>
+                <div class="stage-content">
+                    <div class="stage-visuals">
+                        <div class="character-render sorcerer-render"></div>
                     </div>
-                    <div class="class-description">
-                        Master of soul arts. Studied at the Dragon School, wielding the logic of the cosmos to bend reality.
+                    <div class="stage-lore">
+                        <h2 class="stage-class-name">SORCERER</h2>
+                        <p class="lore-text">Master of soul arts. Studied at the Dragon School, wielding the logic of the cosmos to bend reality. Their mind is a vessel for ancient truths that would drive lesser men to madness.</p>
+                    </div>
+                    <div class="stage-stats">
+                        <div class="stat-block"><span class="stat-label">VIGOR</span><div class="stat-bar"><div class="stat-fill" style="width: 30%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">ATTUNEMENT</span><div class="stat-bar"><div class="stat-fill" style="width: 85%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">ENDURANCE</span><div class="stat-bar"><div class="stat-fill" style="width: 30%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">STRENGTH</span><div class="stat-bar"><div class="stat-fill" style="width: 25%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">DEXTERITY</span><div class="stat-bar"><div class="stat-fill" style="width: 35%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">RESISTANCE</span><div class="stat-bar"><div class="stat-fill" style="width: 30%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar"><div class="stat-fill" style="width: 90%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">FAITH</span><div class="stat-bar"><div class="stat-fill" style="width: 20%;"></div></div></div>
                     </div>
                 </div>
+                <div class="collapsed-name">SORCERER</div>
             </div>
             
             <!-- Pyromancer -->
             <div class="character-slot" data-class="pyromancer">
                 <div class="slot-border"></div>
-                <div class="slot-content">
-                    <h2 class="class-name">PYROMANCER</h2>
-                    <div class="stats-container">
-                        <span class="stat">STR 12</span>
-                        <span class="stat">INT 12</span>
+                <div class="quick-info">
+                    <span class="stat-preview">STR: 12</span>
+                    <span class="stat-preview">INT: 12</span>
+                </div>
+                <div class="stage-content">
+                    <div class="stage-visuals">
+                        <div class="character-render pyromancer-render"></div>
                     </div>
-                    <div class="class-description">
-                        Wielder of the primeval flame. From the Great Swamp, they speak the language of fire and ash.
+                    <div class="stage-lore">
+                        <h2 class="stage-class-name">PYROMANCER</h2>
+                        <p class="lore-text">Wielder of the primeval flame. From the Great Swamp, they speak the language of fire and ash. Fire is a fickle friend, but to the pyromancer, it is the only truth in a cold world.</p>
+                    </div>
+                    <div class="stage-stats">
+                        <div class="stat-block"><span class="stat-label">VIGOR</span><div class="stat-bar"><div class="stat-fill" style="width: 50%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">ATTUNEMENT</span><div class="stat-bar"><div class="stat-fill" style="width: 60%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">ENDURANCE</span><div class="stat-bar"><div class="stat-fill" style="width: 50%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">STRENGTH</span><div class="stat-bar"><div class="stat-fill" style="width: 60%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">DEXTERITY</span><div class="stat-bar"><div class="stat-fill" style="width: 45%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">RESISTANCE</span><div class="stat-bar"><div class="stat-fill" style="width: 60%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar"><div class="stat-fill" style="width: 50%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">FAITH</span><div class="stat-bar"><div class="stat-fill" style="width: 50%;"></div></div></div>
                     </div>
                 </div>
+                <div class="collapsed-name">PYROMANCER</div>
             </div>
             
             <!-- Cleric -->
             <div class="character-slot" data-class="cleric">
                 <div class="slot-border"></div>
-                <div class="slot-content">
-                    <h2 class="class-name">CLERIC</h2>
-                    <div class="stats-container">
-                        <span class="stat">FTH 16</span>
-                        <span class="stat">ATT 12</span>
+                <div class="quick-info">
+                    <span class="stat-preview">FTH: 16</span>
+                    <span class="stat-preview">ATT: 12</span>
+                </div>
+                <div class="stage-content">
+                    <div class="stage-visuals">
+                        <div class="character-render cleric-render"></div>
                     </div>
-                    <div class="class-description">
-                        Devout follower of the gods. Bearing miracles from the Way of White to heal and smite.
+                    <div class="stage-lore">
+                        <h2 class="stage-class-name">CLERIC</h2>
+                        <p class="lore-text">Devout follower of the gods. Bearing miracles from the Way of White to heal and smite. Their faith is an iron shield against the creeping dark of the Undead Curse.</p>
+                    </div>
+                    <div class="stage-stats">
+                        <div class="stat-block"><span class="stat-label">VIGOR</span><div class="stat-bar"><div class="stat-fill" style="width: 60%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">ATTUNEMENT</span><div class="stat-bar"><div class="stat-fill" style="width: 65%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">ENDURANCE</span><div class="stat-bar"><div class="stat-fill" style="width: 45%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">STRENGTH</span><div class="stat-bar"><div class="stat-fill" style="width: 55%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">DEXTERITY</span><div class="stat-bar"><div class="stat-fill" style="width: 30%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">RESISTANCE</span><div class="stat-bar"><div class="stat-fill" style="width: 40%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar"><div class="stat-fill" style="width: 20%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">FAITH</span><div class="stat-bar"><div class="stat-fill" style="width: 85%;"></div></div></div>
                     </div>
                 </div>
+                <div class="collapsed-name">CLERIC</div>
             </div>
             
             <!-- Bandit -->
             <div class="character-slot" data-class="bandit">
                 <div class="slot-border"></div>
-                <div class="slot-content">
-                    <h2 class="class-name">BANDIT</h2>
-                    <div class="stats-container">
-                        <span class="stat">DEX 16</span>
-                        <span class="stat">END 14</span>
+                <div class="quick-info">
+                    <span class="stat-preview">DEX: 16</span>
+                    <span class="stat-preview">END: 14</span>
+                </div>
+                <div class="stage-content">
+                    <div class="stage-visuals">
+                        <div class="character-render bandit-render"></div>
                     </div>
-                    <div class="class-description">
-                        Agile survivalist. A rogue from the outskirts, living by the blade and the silence of the night.
+                    <div class="stage-lore">
+                        <h2 class="stage-class-name">BANDIT</h2>
+                        <p class="lore-text">Agile survivalist. A rogue from the outskirts, living by the blade and the silence of the night. In the ruins of Lordran, morality is a luxury they simply cannot afford.</p>
+                    </div>
+                    <div class="stage-stats">
+                        <div class="stat-block"><span class="stat-label">VIGOR</span><div class="stat-bar"><div class="stat-fill" style="width: 45%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">ATTUNEMENT</span><div class="stat-bar"><div class="stat-fill" style="width: 25%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">ENDURANCE</span><div class="stat-bar"><div class="stat-fill" style="width: 70%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">STRENGTH</span><div class="stat-bar"><div class="stat-fill" style="width: 45%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">DEXTERITY</span><div class="stat-bar"><div class="stat-fill" style="width: 80%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">RESISTANCE</span><div class="stat-bar"><div class="stat-fill" style="width: 50%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">INTELLIGENCE</span><div class="stat-bar"><div class="stat-fill" style="width: 20%;"></div></div></div>
+                        <div class="stat-block"><span class="stat-label">FAITH</span><div class="stat-bar"><div class="stat-fill" style="width: 20%;"></div></div></div>
                     </div>
                 </div>
+                <div class="collapsed-name">BANDIT</div>
             </div>
         </div>
 
