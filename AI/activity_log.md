@@ -19,15 +19,17 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The website has been refined with centered titles and improved collapsed slot behavior.
+**Current Status:** The website has been refined to center the title and improve class name orientation.
 
-## Summary of actions taken (2026-03-30) - Update 6
+## Summary of actions taken (2026-03-30) - Update 7
 
-1.  **Layout Refinements:**
-    -   **Centered Title:** The "SELECT CLASS" main title is now perfectly centered on the screen.
-    -   **Class Name Realignment:** Collapsed class names have been moved from the bottom to the **top** of each slot and remain centered vertically (rotated 90 degrees).
-    -   **Clean Collapsed State:** Implemented logic in `style.css` to completely hide the `.collapsed-name` and `.quick-info` text when a box is in its "collapsed" 5% width state. This prevents partial letters from being visible at the edges of the screen.
+1.  **Layout & Orientation Refinements:**
+    -   **Centered Header:** Re-ensured that the "SELECT CLASS" main title is perfectly centered within the container.
+    -   **Dynamic Name Orientation:** 
+        -   Class names in the default 5-column view are now **upright** and positioned at the top of each slot.
+        -   The names only rotate (sideways) and center vertically when the slot is in a **collapsed state** (i.e., when another class is selected and expanded to 80%).
+    -   **Clean Collapsed View:** Maintained the logic to hide text in narrow 5% width slots to prevent any visual cut-offs or overflow.
 
 2.  **Version Control:**
-    -   Committed all refinements.
+    -   Committed orientation and centering fixes.
     -   Pushed updates to `main` and `gh-pages` branches.

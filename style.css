@@ -62,7 +62,9 @@ body {
 
 .title-container {
     margin-bottom: 2rem;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 }
 
 .main-title {
@@ -71,6 +73,7 @@ body {
     letter-spacing: 12px;
     color: var(--text-parchment);
     text-transform: uppercase;
+    text-align: center;
 }
 
 /* 12-Column Grid Container */
@@ -99,20 +102,41 @@ body {
     background-color: rgba(42, 16, 5, 0.4);
 }
 
-/* Collapsed State Elements */
+/* Class Name Elements */
 .collapsed-name {
     position: absolute;
-    bottom: 4rem;
+    top: 4rem; /* Aligned to top by default */
     left: 50%;
-    transform: translateX(-50%) rotate(-90deg);
+    transform: translateX(-50%); /* Upright by default */
     font-family: 'Cinzel', serif;
-    font-size: 2rem;
-    letter-spacing: 5px;
+    font-size: 1.8rem;
+    letter-spacing: 4px;
     color: var(--text-parchment);
-    opacity: 0.4;
-    transition: opacity 0.4s ease;
+    opacity: 0.5;
+    transition: all var(--transition-weighty);
     white-space: nowrap;
     pointer-events: none;
+    z-index: 15;
+}
+
+/* Only rotate when the parent grid has a selection and this slot is NOT active (collapsed state) */
+.character-grid:has(.character-slot.active) .character-slot:not(.active) .collapsed-name {
+    transform: translateX(-50%) rotate(-90deg);
+    top: 50%; /* Center vertically when rotated */
+    opacity: 0.8;
+}
+
+/* Ensure text is hidden if slot is too narrow (e.g. 5%) to avoid cut-off */
+@container (max-width: 100px) {
+    .collapsed-name {
+        display: none;
+    }
+}
+/* Alternative for hide-text: Use JS or specific width checks */
+.character-grid[style*="5%"] .character-slot:not(.active) .collapsed-name,
+.character-grid[style*="5%"] .character-slot:not(.active) .quick-info {
+    opacity: 0;
+    visibility: hidden;
 }
 
 .character-slot:hover .collapsed-name, 
@@ -122,7 +146,7 @@ body {
 }
 
 .character-slot.active .collapsed-name {
-    display: none;
+    display: none; /* Hide because stage-content shows the name larger */
 }
 
 /* Ember Hover Logic (Quick Info) */
