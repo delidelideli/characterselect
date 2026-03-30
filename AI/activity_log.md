@@ -19,21 +19,15 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The project is live on GitHub Pages, and a dedicated AI logging system has been established.
+**Current Status:** The project is live on GitHub Pages with improved UI and the "Prepare to Die" popup.
 
-## Summary of actions taken (2026-03-30) - Update 1
+## Summary of actions taken (2026-03-30) - Update 2
 
-1.  **"Prepare to Die" Popup Implementation:**
-    -   **CSS Enhancements:** Added a sophisticated full-screen overlay in `style.css` featuring:
-        -   Blurry backdrop filter for depth.
-        -   Large, red "Cinzel" font text with a pulsing animation.
-        -   Scale-up transition to create a dramatic "in-your-face" effect.
-    -   **HTML Structure:** Integrated a new `death-popup` div in `index.html` to hold the message and chosen class subtext.
-    -   **JavaScript Logic:** Replaced the basic browser `alert` in `script.js` with a custom function that:
-        -   Updates the popup with the name of the selected class.
-        -   Triggers the "Prepare to Die" animation.
-        -   Automatically dismisses the popup after 5 seconds to return to the selection screen.
+1.  **UI/UX Refinements:**
+    -   **Overlay Adjustment:** Softened the global radial overlay in `style.css` (changed from 40% to 60% transparency and reduced opacity) to ensure classes at the screen edges (Bandit and Warrior) are clearly legible.
+    -   **Alignment Fix:** Implemented a fixed height for `.class-name` and `.class-description` in `style.css`. This ensures that "WARRIOR" and all other class names remain perfectly aligned horizontally, regardless of description length or slot width.
+    -   **Layout Optimization:** Added a `max-width` to the character selection container for better presentation on ultra-wide screens.
 
 2.  **Version Control:**
-    -   Staged and committed the UI/UX improvements.
-    -   Pushed changes to both `main` and `gh-pages` branches to ensure the live site reflects the new features.
+    -   Committed the UI refinements.
+    -   Pushed updates to `main` and `gh-pages` branches.
