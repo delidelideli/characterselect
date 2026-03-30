@@ -3,64 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Character Selection | Dark Souls Style</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <title>Embers of Choice | Character Selection</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,400&family=EB+Garamond:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="overlay"></div>
+    <div class="grain-overlay"></div>
+    <div class="smoke-container" id="smokeContainer"></div>
+    
     <main class="character-select">
         <header class="title-container">
             <h1 class="main-title">SELECT CLASS</h1>
         </header>
         
-        <div class="character-grid">
+        <div class="character-grid" id="characterGrid">
+            <!-- Warrior -->
             <div class="character-slot" data-class="warrior">
-                <div class="slot-bg"></div>
+                <div class="slot-border"></div>
                 <div class="slot-content">
                     <h2 class="class-name">WARRIOR</h2>
+                    <div class="stats-container">
+                        <span class="stat">STR 16</span>
+                        <span class="stat">DEX 14</span>
+                    </div>
                     <div class="class-description">
-                        Fearless warrior. High strength and dexterity.
+                        Fearless warrior. A master of weapons, forged in the fires of a thousand battles. High strength and dexterity.
                     </div>
                 </div>
             </div>
             
+            <!-- Sorcerer -->
             <div class="character-slot" data-class="sorcerer">
-                <div class="slot-bg"></div>
+                <div class="slot-border"></div>
                 <div class="slot-content">
                     <h2 class="class-name">SORCERER</h2>
+                    <div class="stats-container">
+                        <span class="stat">INT 16</span>
+                        <span class="stat">ATT 15</span>
+                    </div>
                     <div class="class-description">
-                        Master of soul arts. High intelligence and attunement.
+                        Master of soul arts. Studied at the Dragon School, wielding the logic of the cosmos to bend reality.
                     </div>
                 </div>
             </div>
             
+            <!-- Pyromancer -->
             <div class="character-slot" data-class="pyromancer">
-                <div class="slot-bg"></div>
+                <div class="slot-border"></div>
                 <div class="slot-content">
                     <h2 class="class-name">PYROMANCER</h2>
+                    <div class="stats-container">
+                        <span class="stat">STR 12</span>
+                        <span class="stat">INT 12</span>
+                    </div>
                     <div class="class-description">
-                        Wielder of flame. Balanced strength and intelligence.
+                        Wielder of the primeval flame. From the Great Swamp, they speak the language of fire and ash.
                     </div>
                 </div>
             </div>
             
+            <!-- Cleric -->
             <div class="character-slot" data-class="cleric">
-                <div class="slot-bg"></div>
+                <div class="slot-border"></div>
                 <div class="slot-content">
                     <h2 class="class-name">CLERIC</h2>
+                    <div class="stats-container">
+                        <span class="stat">FTH 16</span>
+                        <span class="stat">ATT 12</span>
+                    </div>
                     <div class="class-description">
-                        Devout follower of the gods. High faith and attunement.
+                        Devout follower of the gods. Bearing miracles from the Way of White to heal and smite.
                     </div>
                 </div>
             </div>
             
+            <!-- Bandit -->
             <div class="character-slot" data-class="bandit">
-                <div class="slot-bg"></div>
+                <div class="slot-border"></div>
                 <div class="slot-content">
                     <h2 class="class-name">BANDIT</h2>
+                    <div class="stats-container">
+                        <span class="stat">DEX 16</span>
+                        <span class="stat">END 14</span>
+                    </div>
                     <div class="class-description">
-                        Agile survivalist. High dexterity and endurance.
+                        Agile survivalist. A rogue from the outskirts, living by the blade and the silence of the night.
                     </div>
                 </div>
             </div>

@@ -19,15 +19,24 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The project is live on GitHub Pages with improved UI and the "Prepare to Die" popup.
+**Current Status:** The website has been completely recreated according to the "Embers of Choice" design document.
 
-## Summary of actions taken (2026-03-30) - Update 2
+## Summary of actions taken (2026-03-30) - Update 3
 
-1.  **UI/UX Refinements:**
-    -   **Overlay Adjustment:** Softened the global radial overlay in `style.css` (changed from 40% to 60% transparency and reduced opacity) to ensure classes at the screen edges (Bandit and Warrior) are clearly legible.
-    -   **Alignment Fix:** Implemented a fixed height for `.class-name` and `.class-description` in `style.css`. This ensures that "WARRIOR" and all other class names remain perfectly aligned horizontally, regardless of description length or slot width.
-    -   **Layout Optimization:** Added a `max-width` to the character selection container for better presentation on ultra-wide screens.
+1.  **Full Design Recreation ("Embers of Choice"):**
+    -   **Visual Overhaul:** 
+        -   Applied the "Desperate Majesty" theme with a `#050505` background and `#F59E0B` (Estus Orange) accents.
+        -   Added high-grain texture and rising ember particle effects.
+        -   Implemented internal glow effects on character slots.
+    -   **Typography:** Switched to "Cinzel" for headers (H1 at 4rem) and "EB Garamond" for lore-heavy body text.
+    -   **Layout & Interaction:**
+        -   Implemented a 12-column CSS Grid layout for the character selection.
+        -   **5-Box Slide:** Created a reactive layout where boxes expand/shrink using `grid-template-columns`.
+        -   **Weighty Click:** On selection, the chosen box expands to 80% width while others shrink to 5%, with a "heavy" 0.7s transition.
+        -   **Border Animation:** Added a "fuse-like" gradient animation that travels the perimeter of a slot on hover.
+        -   **Quick View:** Stats and lore descriptions now fade in with a 0.4s transition during hover or selection.
+    -   **Mobile Support:** Added a media query to stack the grid vertically on smaller screens.
 
 2.  **Version Control:**
-    -   Committed the UI refinements.
+    -   Committed all structural, stylistic, and logic changes.
     -   Pushed updates to `main` and `gh-pages` branches.
