@@ -139,7 +139,7 @@ body {
 /* Ember Hover Logic (Quick Info) */
 .quick-info {
     position: absolute;
-    bottom: 2rem;
+    top: 7rem; /* Positioned right below the class name (top 4rem) */
     width: 100%;
     text-align: center;
     opacity: 0;
@@ -148,6 +148,7 @@ body {
     font-size: 1rem;
     letter-spacing: 2px;
     color: var(--accent);
+    z-index: 15;
 }
 
 .character-slot:hover .quick-info {

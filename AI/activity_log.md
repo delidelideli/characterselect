@@ -19,15 +19,14 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The website has been updated to ensure class names are always upright and hidden when collapsed.
+**Current Status:** The website has been updated to position quick-info stats directly below class names.
 
-## Summary of actions taken (2026-03-30) - Update 8
+## Summary of actions taken (2026-03-30) - Update 9
 
-1.  **Typography & Layout Refinements:**
-    -   **Upright Class Names:** Removed all sideways/rotated text logic for class names. They now remain upright and centered at the top of their slots at all times.
-    -   **Clean Collapsed View:** When a class is selected and others collapse to 5% width, their names and quick-info stats are now completely hidden (`opacity: 0`). This ensures that no partial or cut-off text is visible in the narrow side slots.
-    -   **Centered Title:** Confirmed the main "SELECT CLASS" title remains centered.
+1.  **UI/UX Positioning Refinement:**
+    -   **Stats Realignment:** Moved the `quick-info` (the two basic stats shown on hover) from the bottom of the slot to the top, positioning it directly below the class name.
+    -   **Visual Hierarchy:** This change ensures that all primary information (Class Name + Key Stats) is grouped together at the top of the character slot for better readability.
 
 2.  **Version Control:**
-    -   Committed orientation fixes.
+    -   Committed positioning updates.
     -   Pushed updates to `main` and `gh-pages` branches.
