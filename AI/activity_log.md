@@ -19,14 +19,16 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The website has been updated to position quick-info stats directly below class names.
+**Current Status:** The Pyromancer class has been replaced by the Lancer class.
 
-## Summary of actions taken (2026-03-30) - Update 9
+## Summary of actions taken (2026-03-30) - Update 10
 
-1.  **UI/UX Positioning Refinement:**
-    -   **Stats Realignment:** Moved the `quick-info` (the two basic stats shown on hover) from the bottom of the slot to the top, positioning it directly below the class name.
-    -   **Visual Hierarchy:** This change ensures that all primary information (Class Name + Key Stats) is grouped together at the top of the character slot for better readability.
+1.  **Class Swap:**
+    -   **Lancer Implementation:** Replaced all instances of "Pyromancer" with "Lancer" in `index.html`.
+    -   **New Lore:** Wrote a unique description for the Lancer (a swift master of the spear from the High Ridges).
+    -   **Stat Update:** Adjusted the Lancer's attributes to favor high **Dexterity** (75%) and **Endurance** (65%), reflecting their agile combat style.
+    -   **Visual Placeholder:** Updated the `lancer-render` placeholder in `style.css`.
 
 2.  **Version Control:**
-    -   Committed positioning updates.
+    -   Committed class change updates.
     -   Pushed updates to `main` and `gh-pages` branches.

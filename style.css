@@ -336,7 +336,7 @@ body {
 /* Placeholder for Renders */
 .warrior-render { background-image: radial-gradient(circle, #333 30%, transparent 70%); }
 .sorcerer-render { background-image: radial-gradient(circle, #224 30%, transparent 70%); }
-.pyromancer-render { background-image: radial-gradient(circle, #422 30%, transparent 70%); }
+.lancer-render { background-image: radial-gradient(circle, #422 30%, transparent 70%); }
 .cleric-render { background-image: radial-gradient(circle, #442 30%, transparent 70%); }
 .bandit-render { background-image: radial-gradient(circle, #242 30%, transparent 70%); }
 
