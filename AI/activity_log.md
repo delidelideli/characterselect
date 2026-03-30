@@ -19,26 +19,15 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The website has been upgraded to the "Final Desktop Master" specification from the new design document.
+**Current Status:** The website has been refined with centered titles and improved collapsed slot behavior.
 
-## Summary of actions taken (2026-03-30) - Update 5
+## Summary of actions taken (2026-03-30) - Update 6
 
-1.  **"Final Desktop Master" Redesign:**
-    -   **Atmospheric Background:** Implemented a "Living Background" using a radial-gradient from `#050505` to a smoldering `#2A1005` (Deep Ember), pulsing to simulate flickering firelight.
-    -   **Typography Overhaul:**
-        -   **Headers:** Switched to "Cinzel Decorative" for the main title and selected class names (4rem).
-        -   **Stats:** Using "Cinzel" (bold) for stat labels.
-        -   **Lore:** Using "EB Garamond" (italicized) for the immersive description.
-    -   **The Character Stage:**
-        -   **3-Column Sub-Grid:** When a class is clicked, the expanded box (80% width) now reveals a detailed internal layout:
-            -   **Left:** Character render placeholder with glow effects.
-            -   **Center:** Class name and lore text.
-            -   **Right:** A comprehensive stat block (Vigor, Strength, etc.) featuring horizontal progress bars in "Estus Orange."
-    -   **Interaction Logic:**
-        -   **Ember Hover:** Quick-view stats fade in at the bottom of the slot on hover.
-        -   **Weighty Click:** Non-selected classes collapse to 5% width while the selected class takes the stage, using a slow `0.8s cubic-bezier` transition.
-    -   **Ash Particles:** Replaced previous ember effects with slow-drifting "ash" particles to match the specified theme.
-    -   **Desktop Optimization:** Locked the experience to a 16:9 aspect ratio focus as per the design constraints.
+1.  **Layout Refinements:**
+    -   **Centered Title:** The "SELECT CLASS" main title is now perfectly centered on the screen.
+    -   **Class Name Realignment:** Collapsed class names have been moved from the bottom to the **top** of each slot and remain centered vertically (rotated 90 degrees).
+    -   **Clean Collapsed State:** Implemented logic in `style.css` to completely hide the `.collapsed-name` and `.quick-info` text when a box is in its "collapsed" 5% width state. This prevents partial letters from being visible at the edges of the screen.
 
 2.  **Version Control:**
-    -   Committed all changes to `main` and pushed to `gh-pages` for live deployment.
+    -   Committed all refinements.
+    -   Pushed updates to `main` and `gh-pages` branches.
