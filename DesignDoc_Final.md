@@ -21,10 +21,10 @@
 
 ## 4. Layout & Interaction
 *   **Main Title:** Perfectly centered at the top of the screen.
-*   **The 5-Column Grid:** The screen is divided into 5 vertical "Slabs" (Class boxes).
+*   **The 5-Column Grid:** The screen is divided into 5 vertical "Slabs" (Class boxes) with **slightly rounded edges (12px)**.
 *   **The "Ember" Hover Logic:**
     1.  **Reactive Layout:** The hovered column expands its `grid-column` width (e.g., from 1fr to 1.5fr) while the others slightly shrink.
-    2.  **The Border Burn:** A `#F59E0B` gradient "travels" around the perimeter of the box like a burning fuse.
+    2.  **The Glow Beam:** A rotating `#F59E0B` (Estus Orange) **gradient beam** travels all the way around the perimeter of the box, featuring a soft glow effect.
     3.  **Quick Info:** A summary of the top two stats fades in directly **below** the class name at the top of the box at 0.3s.
     4.  **Upright Alignment:** Class names are always upright (not rotated) and positioned at the top of the slot.
 *   **The "Weighty" Click:** On selection:

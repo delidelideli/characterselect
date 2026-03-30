@@ -19,20 +19,16 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** All changes have been finalized and documented in a new Master Design Document.
+**Current Status:** The character slots have been updated with rounded corners and a new "Glow Beam" border animation.
 
-## Summary of actions taken (2026-03-30) - Update 13
+## Summary of actions taken (2026-03-30) - Update 14
 
-1.  **Documentation Update:**
-    -   Synthesized all user refinements into a new master document: `DesignDoc_Final.md`.
-    -   **Final Specs Included:**
-        -   Lancer class replacement.
-        -   Upright class name positioning at the top of slots.
-        -   Stats repositioned directly below class names.
-        -   Centered main title with orange glow effects.
-        -   Enhanced "Prepare to Die" screen styling (centered, orange, large subtext).
-        -   Specific rules for hiding text in collapsed side-slots.
+1.  **UI/UX Visual Enhancement:**
+    -   **Rounded Corners:** Added `border-radius: 12px` to the character slots and their border overlays for a smoother, modern aesthetic.
+    -   **Glow Beam Animation:** Replaced the previous "fuse" animation with a high-end **conic-gradient "beam"** that travels all the way around the perimeter of the box.
+    -   **Gradient Glow:** The moving line now features a soft gradient and a glowing `drop-shadow` effect in Estus Orange.
+    -   **Technical Implementation:** Utilized CSS `@property` and `mask-composite` to create a clean, rounded-edge border trail that works seamlessly with the existing layout.
 
 2.  **Version Control:**
-    -   Committed the final design document and activity log.
-    -   Pushed all updates to `main` and `gh-pages` branches.
+    -   Committed visual enhancements.
+    -   Pushed updates to `main` and `gh-pages` branches.

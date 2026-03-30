@@ -97,6 +97,7 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+    border-radius: 12px; /* Slightly rounded edges */
 }
 
 .character-slot:hover {
@@ -253,34 +254,39 @@ body {
     box-shadow: 0 0 10px var(--accent);
 }
 
-/* Border Fuse Animation */
+/* Border Fuse Animation ("The Glowing Beam") */
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .slot-border {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    pointer-events: none;
+    inset: 0;
+    padding: 2px;
+    border-radius: 12px;
+    background: conic-gradient(from var(--angle), var(--accent), transparent 30%, transparent);
+    -webkit-mask: 
+      linear-gradient(#fff 0 0) content-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
     z-index: 20;
+    pointer-events: none;
+    filter: drop-shadow(0 0 5px var(--accent));
 }
 
-.character-slot:hover .slot-border::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border: 2px solid var(--accent);
-    animation: fuseTrace 2s linear infinite;
+.character-slot:hover .slot-border,
+.character-slot.active .slot-border {
+    opacity: 1;
+    animation: rotateBorder 2s linear infinite;
 }
 
-@keyframes fuseTrace {
-    0% { clip-path: inset(0 100% 100% 0); }
-    25% { clip-path: inset(0 0 100% 0); }
-    50% { clip-path: inset(0 0 0 0); }
-    75% { clip-path: inset(100% 0 0 0); }
-    100% { clip-path: inset(100% 100% 0 0); }
+@keyframes rotateBorder {
+    to { --angle: 360deg; }
 }
 
 /* Ash Particles */
