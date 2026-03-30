@@ -19,16 +19,15 @@
     -   Initialized `AI/activity_log.md` to track user inputs and provide summaries of all future actions.
 
 ---
-**Current Status:** The Pyromancer class has been replaced by the Lancer class.
+**Current Status:** The "Prepare to Die" screen has been visually enhanced.
 
-## Summary of actions taken (2026-03-30) - Update 10
+## Summary of actions taken (2026-03-30) - Update 11
 
-1.  **Class Swap:**
-    -   **Lancer Implementation:** Replaced all instances of "Pyromancer" with "Lancer" in `index.html`.
-    -   **New Lore:** Wrote a unique description for the Lancer (a swift master of the spear from the High Ridges).
-    -   **Stat Update:** Adjusted the Lancer's attributes to favor high **Dexterity** (75%) and **Endurance** (65%), reflecting their agile combat style.
-    -   **Visual Placeholder:** Updated the `lancer-render` placeholder in `style.css`.
+1.  **"Prepare to Die" Screen Refinement:**
+    -   **Subtext Styling:** The "PATH HAS BEEN CHOSEN" subtext is now perfectly centered below the "PREPARE TO DIE" headline.
+    -   **Typography:** Increased the font size of the subtext to `2.5rem` and changed its color to **Estus Orange** (`#F59E0B`) for better contrast and thematic consistency.
+    -   **Visual Polish:** Added an orange text-shadow to the subtext to give it a glowing, "ember" feel.
 
 2.  **Version Control:**
-    -   Committed class change updates.
+    -   Committed visual enhancements.
     -   Pushed updates to `main` and `gh-pages` branches.
