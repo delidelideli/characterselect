@@ -85,6 +85,11 @@
 - Added a "Ceremonial Frame" with horizontal glowing lines flanking the header.
 - Reduced the Dark Sign pulse to a subtle 1.05x scale for a more grounded feel.
 
+### Update 22: Idle Visual Refinement (Portrait Fade)
+- Restored and intensified the radial fade-mask on idle character portraits (30% center, 80% transparent).
+- Added a 1px blur to idle portraits to enhance the "shrine alcove" aesthetic.
+- Ensured these effects transition away cleanly on hover.
+
 ---
 
 ## Correction & Re-prompt Log

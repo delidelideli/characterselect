@@ -245,13 +245,13 @@ body:has(.character-slot.active:hover) .ash-container {
     height: 100%;
     object-fit: contain;
     border-radius: 20px;
-    filter: sepia(0.5) brightness(0.6) contrast(1.2);
+    filter: sepia(0.5) brightness(0.6) contrast(1.2) blur(1px);
     transition: all var(--transition-weighty);
     /* Inset effect: scale it down slightly so it doesn't touch borders */
     transform: scale(0.85);
     transform-origin: center;
-    mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%);
-    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%);
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
 }
 
 /* Hide visuals and names when another class is active */
