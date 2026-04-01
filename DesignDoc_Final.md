@@ -28,6 +28,9 @@
 *   **The Header (Dark Sign):** A large (280px) "Dark Sign" corona symbol sits behind the main title. It features layered amber shadows to create a solar eclipse flare and pulses subtly (scale 1.0 to 1.05) to simulate radiating heat.
 *   **Main Title:** Perfectly centered at the top of the screen within a 4rem margin container.
 *   **The 5-Column Grid:** The screen is divided into 5 vertical "Slabs" (Class boxes) with **slightly rounded edges (12px)**.
+    *   **The Idle "Shrine" Look:**
+        1.  **Ethereal Border:** Each idle slot features a static 1px `rgba(245, 158, 11, 0.25)` border to define its presence.
+        2.  **Cinematic Vignette:** A deep radial shadow mask covers the bottom 70% of the idle slot, focusing attention on the character's upper frame and fading away on hover.
 *   **The "Ember" Hover Logic:**
     1.  **Reactive Layout:** The hovered column expands its `grid-column` width (e.g., from 1fr to 1.5fr) while the others slightly shrink.
     2.  **The Glow Beam:** A slow-moving (8s), double-faded segment (soft head and tail) that travels around the perimeter. It features a slow 3s pulse in opacity (40% to 100%) for a "smoldering" feel.

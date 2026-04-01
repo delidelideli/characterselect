@@ -100,4 +100,19 @@
 9.  **Header Symbol:** Experimented with "Ancient Engraving" (notched) and "Eclipse Glow" (solid) before finalizing the "Corona" flare per user preference.
 
 ---
+
+## Archived Experimental Ideas
+
+### Rotating Rune Circle (Implemented & Reverted 2026-04-01)
+**Concept:** A mystical circular pattern of runes sitting behind the character image that rotates slowly to create a "shrine" focal point.
+**Implementation:**
+- **Element:** Added via `::before` pseudo-element on `.collapsed-visuals`.
+- **Styling:** 
+  - `content: 'ᛖ ᛗ ᛒ ᛖ ᚱ ᛊ ᛟ ᚠ ᚲ ᚺ ᛟ ᛁ ᚲ ᛖ';`
+  - `border: 1px dashed rgba(245, 158, 11, 0.3);`
+  - `border-radius: 50%;`
+  - `animation: runeRotate 20s linear infinite;`
+- **Logic:** Used `top: 30%` and `left: 50%` with negative margins to center it perfectly behind the character's torso/head area.
+
+---
 **Current Status:** Full session history consolidated. Codebase is fully synchronized with the Final Master Design Document.
