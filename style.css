@@ -121,9 +121,35 @@ body {
     z-index: 15;
 }
 
-/* Hide text in very narrow collapsed boxes (5% width) or when another class is active */
+/* New: Collapsed Visuals (Idle Character Image) */
+.collapsed-visuals {
+    position: absolute;
+    top: 10rem;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 10rem);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    opacity: 0.4;
+    transition: all var(--transition-weighty);
+    pointer-events: none;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.idle-img {
+    width: auto;
+    height: 90%;
+    object-fit: contain;
+    filter: sepia(0.5) brightness(0.6) contrast(1.2);
+    transition: all var(--transition-weighty);
+}
+
+/* Hide visuals and names when another class is active */
 .character-grid:has(.character-slot.active) .character-slot:not(.active) .collapsed-name,
-.character-grid:has(.character-slot.active) .character-slot:not(.active) .quick-info {
+.character-grid:has(.character-slot.active) .character-slot:not(.active) .quick-info,
+.character-grid:has(.character-slot.active) .character-slot:not(.active) .collapsed-visuals {
     opacity: 0;
     visibility: hidden;
 }
@@ -134,8 +160,18 @@ body {
     color: var(--accent);
 }
 
-.character-slot.active .collapsed-name {
-    display: none; /* Hide because stage-content shows the name larger */
+.character-slot:hover .collapsed-visuals {
+    opacity: 1;
+}
+
+.character-slot:hover .idle-img {
+    filter: sepia(0) brightness(1) contrast(1);
+    transform: scale(1.05);
+}
+
+.character-slot.active .collapsed-name,
+.character-slot.active .collapsed-visuals {
+    display: none; /* Hide because stage-content shows everything larger */
 }
 
 /* Ember Hover Logic (Quick Info) */
@@ -164,7 +200,7 @@ body {
 /* The Stage Content (Revealed on Click) */
 .stage-content {
     display: none;
-    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-columns: 1.2fr 1.5fr 1fr;
     height: 100%;
     width: 100%;
     padding: 2rem;
@@ -183,15 +219,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 
 .character-render {
-    width: 100%;
-    height: 80%;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    filter: drop-shadow(0 0 20px rgba(245, 158, 11, 0.2));
+    max-width: 100%;
+    max-height: 90%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 30px rgba(245, 158, 11, 0.4));
+    animation: renderFloat 6s infinite alternate ease-in-out;
+}
+
+@keyframes renderFloat {
+    from { transform: translateY(0); }
+    to { transform: translateY(-20px); }
 }
 
 /* Center Column (Lore) */
