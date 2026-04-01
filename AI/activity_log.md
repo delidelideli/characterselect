@@ -79,6 +79,12 @@
 ### Update 20: Interaction Polish (Active Hover Blur)
 - Added a dynamic background blur and darkening effect (10px blur, 0.7 brightness) when hovering over a selected character's stage screen.
 
+### Update 21: Header Visual Overhaul
+- Added a "Dark Sign" corona symbol behind the main title with layered solar flare effects.
+- Implemented a "Smoldering Core" text effect: 3.25rem font-size, vertical gradient, and jittering pulse animation.
+- Added a "Ceremonial Frame" with horizontal glowing lines flanking the header.
+- Reduced the Dark Sign pulse to a subtle 1.05x scale for a more grounded feel.
+
 ---
 
 ## Correction & Re-prompt Log
@@ -91,6 +97,7 @@
 6.  **Sideways Text (Residual):** Failed to remove all rotation logic in the first "fix" attempt, requiring a second surgical update.
 7.  **Command Execution:** Initial attempt to use `&&` for shell commands failed on PowerShell; corrected to `;`.
 8.  **Ember Depth:** Initially moved embers behind only on hover/active; user requested they permanently stay behind everything.
+9.  **Header Symbol:** Experimented with "Ancient Engraving" (notched) and "Eclipse Glow" (solid) before finalizing the "Corona" flare per user preference.
 
 ---
 **Current Status:** Full session history consolidated. Codebase is fully synchronized with the Final Master Design Document.

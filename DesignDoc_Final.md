@@ -18,12 +18,15 @@
 *   **Typography:** `#C4B494` (Aged Parchment) for body text; `#F59E0B` for highlighted stats and titles.
 
 ## 3. Typographic Hierarchy
-*   **Headline (H1):** *Font: "Cinzel Decorative"*. 3rem (Main Title) / 4rem (Stage Name), uppercase, 12px letter-spacing. **Style:** Estus Orange with a heavy glowing text-shadow.
+*   **Headline (H1):** *Font: "Cinzel Decorative"*. 3.25rem (Main Title) / 4rem (Stage Name), uppercase, 15px letter-spacing. 
+    *   **Main Title Style:** Features a vertical gradient (Estus Orange to Burnt Sienna) and a pulsing `smolderText` animation (scale and drop-shadow jitter).
+    *   **Ceremonial Frame:** The title is flanked by two horizontal 150px glowing lines (pseudo-elements) that anchor it to the top of the screen.
 *   **Subhead (H2):** *Font: "Cinzel"*. 1.2rem - 1.8rem, all-caps, bold. Used for Class Names (upright) and Stat Labels.
 *   **Body Text:** *Font: "EB Garamond"*. 1.1rem, italicized. Used for the lore description.
 
 ## 4. Layout & Interaction
-*   **Main Title:** Perfectly centered at the top of the screen.
+*   **The Header (Dark Sign):** A large (280px) "Dark Sign" corona symbol sits behind the main title. It features layered amber shadows to create a solar eclipse flare and pulses subtly (scale 1.0 to 1.05) to simulate radiating heat.
+*   **Main Title:** Perfectly centered at the top of the screen within a 4rem margin container.
 *   **The 5-Column Grid:** The screen is divided into 5 vertical "Slabs" (Class boxes) with **slightly rounded edges (12px)**.
 *   **The "Ember" Hover Logic:**
     1.  **Reactive Layout:** The hovered column expands its `grid-column` width (e.g., from 1fr to 1.5fr) while the others slightly shrink.

@@ -92,20 +92,77 @@ body:has(.character-slot.active:hover) .ash-container {
 }
 
 .title-container {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
+    position: relative;
+    padding: 2rem 0;
+}
+
+.dark-sign {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: transparent;
+    border: 1px solid rgba(245, 158, 11, 0.4);
+    box-shadow: 
+        0 0 20px rgba(245, 158, 11, 0.6),
+        0 0 40px rgba(245, 158, 11, 0.3),
+        0 0 100px rgba(245, 158, 11, 0.15),
+        inset 0 0 30px rgba(245, 158, 11, 0.3);
+    z-index: -1;
+    animation: darkSignPulse 8s infinite alternate ease-in-out;
+}
+
+@keyframes darkSignPulse {
+    0% { transform: translate(-50%, -50%) scale(1); opacity: 0.4; }
+    100% { transform: translate(-50%, -50%) scale(1.05); opacity: 0.55; }
 }
 
 .main-title {
     font-family: 'Cinzel Decorative', serif;
-    font-size: 3rem;
-    letter-spacing: 12px;
-    color: var(--accent); /* Estus Orange */
+    font-size: 3.25rem;
+    letter-spacing: 15px;
+    background: linear-gradient(to bottom, #F59E0B 20%, #B45309 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     text-transform: uppercase;
     text-align: center;
-    text-shadow: 0 0 20px rgba(245, 158, 11, 0.6), 0 0 40px rgba(245, 158, 11, 0.3);
+    position: relative;
+    padding: 0 100px;
+    animation: smolderText 4s infinite alternate ease-in-out;
+}
+
+/* Ceremonial Lines */
+.main-title::before,
+.main-title::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 150px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.main-title::before {
+    left: -100px;
+}
+
+.main-title::after {
+    right: -100px;
+}
+
+@keyframes smolderText {
+    0% { filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.4)); transform: scale(1); }
+    100% { filter: drop-shadow(0 0 25px rgba(245, 158, 11, 0.8)); transform: scale(1.02); }
 }
 
 /* 12-Column Grid Container */
