@@ -59,6 +59,11 @@
 ### Update 16: Background Embers
 - Added rising glowing ember particles and a firelight brightness pulse to the "Living Background."
 
+### Update 17: Visual Refinement (Idle Images)
+- Added a radial fade effect to idle character images in selection boxes to prevent them from touching container edges.
+- Implemented 30px corner rounding for images on hover to match the active selection aesthetic.
+- Pushed all changes to the GitHub repository (`gh-pages` branch).
+
 ---
 
 ## Correction & Re-prompt Log
@@ -69,6 +74,7 @@
 4.  **Environment Awareness:** Attempted to use `grep` (Linux) on a Windows environment.
 5.  **Deployment Delay:** Pushed Lancer update, but cache caused the user to still see Pyromancer; required verification of remote state.
 6.  **Sideways Text (Residual):** Failed to remove all rotation logic in the first "fix" attempt, requiring a second surgical update.
+7.  **Command Execution:** Initial attempt to use `&&` for shell commands failed on PowerShell; corrected to `;`.
 
 ---
 **Current Status:** Full session history consolidated. Codebase is fully synchronized with the Final Master Design Document.
