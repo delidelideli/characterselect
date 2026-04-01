@@ -113,11 +113,22 @@
 **Implementation:**
 - **Element:** Added via `::before` pseudo-element on `.collapsed-visuals`.
 - **Styling:** 
-  - `content: 'ᛖ ᛗ ᛒ ᛖ ᚱ ᛊ ᛟ ᚠ ᚲ ᚺ ᛟ ᛁ ᚲ ᛖ';`
+  - `content: 'ᛖ ᛗ ᛒ ᛖ ᚱ ᛊ ᛟ ᚲ ᚺ ᛟ ᛁ ᚲ ᛖ';`
   - `border: 1px dashed rgba(245, 158, 11, 0.3);`
   - `border-radius: 50%;`
   - `animation: runeRotate 20s linear infinite;`
 - **Logic:** Used `top: 30%` and `left: 50%` with negative margins to center it perfectly behind the character's torso/head area.
+
+### Slot Dark Sign (Implemented & Reverted 2026-04-01)
+**Concept:** A scaled-down version of the main header's Dark Sign corona placed behind idle character portraits to act as a "mark of fate."
+**Implementation:**
+- **Element:** Added via `::before` pseudo-element on `.character-slot`.
+- **Original Specs:** 180px diameter, 0.5 opacity, 55% top positioning (global center).
+- **Ghostly Specs:** 160px diameter, 0.2 opacity, 45% top positioning (heart/chest area).
+- **Common Logic:** 
+  - `transition: opacity 0.2s ease;` (Quick fade on hover).
+  - `animation: darkSignPulse 8s infinite alternate ease-in-out;` (Synced with background).
+  - `z-index: 1;` (Behind portrait and vignettes).
 
 ---
 **Current Status:** Full session history consolidated. Codebase is fully synchronized with the Final Master Design Document.
