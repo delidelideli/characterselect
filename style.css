@@ -140,10 +140,16 @@ body {
 
 .idle-img {
     width: auto;
-    height: 90%;
+    height: 100%;
     object-fit: contain;
+    border-radius: 20px;
     filter: sepia(0.5) brightness(0.6) contrast(1.2);
     transition: all var(--transition-weighty);
+    /* Inset effect: scale it down slightly so it doesn't touch borders */
+    transform: scale(0.85);
+    transform-origin: center;
+    mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 90%);
 }
 
 /* Hide visuals and names when another class is active */
@@ -166,7 +172,11 @@ body {
 
 .character-slot:hover .idle-img {
     filter: sepia(0) brightness(1) contrast(1);
+    /* Remove inset: scale back to 1 (or slightly more for emphasis) to touch/fill edges */
     transform: scale(1.05);
+    mask-image: none;
+    -webkit-mask-image: none;
+    border-radius: 30px;
 }
 
 .character-slot.active .collapsed-name,
