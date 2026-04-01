@@ -64,6 +64,21 @@
 - Implemented 30px corner rounding for images on hover to match the active selection aesthetic.
 - Pushed all changes to the GitHub repository (`gh-pages` branch).
 
+### Update 18: Atmosphere Overhaul (Fire & Embers)
+- Redesigned the background gradient to originate from the bottom for a "fire source" feel.
+- Added a `.fire-glow` element with a jittery, irregular flickering animation.
+- Increased ember count to 60 and expanded color palette (reds, golds, white sparks).
+- Implemented wind-drift (rightward translation) for rising particles.
+- Moved all atmospheric particles behind the UI (`z-index: 1`).
+
+### Update 19: Glow Beam Refinement
+- Slowed the border rotation to 8s for a weightier, smoldering look.
+- Added a 3s pulsing opacity animation (40% to 100%).
+- Updated the beam to be a double-faded segment (soft head and soft tail) using `conic-gradient`.
+
+### Update 20: Interaction Polish (Active Hover Blur)
+- Added a dynamic background blur and darkening effect (10px blur, 0.7 brightness) when hovering over a selected character's stage screen.
+
 ---
 
 ## Correction & Re-prompt Log
@@ -75,6 +90,7 @@
 5.  **Deployment Delay:** Pushed Lancer update, but cache caused the user to still see Pyromancer; required verification of remote state.
 6.  **Sideways Text (Residual):** Failed to remove all rotation logic in the first "fix" attempt, requiring a second surgical update.
 7.  **Command Execution:** Initial attempt to use `&&` for shell commands failed on PowerShell; corrected to `;`.
+8.  **Ember Depth:** Initially moved embers behind only on hover/active; user requested they permanently stay behind everything.
 
 ---
 **Current Status:** Full session history consolidated. Codebase is fully synchronized with the Final Master Design Document.

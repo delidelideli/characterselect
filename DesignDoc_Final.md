@@ -4,8 +4,10 @@
 
 ## 1. Visual Rules & Mood
 *   **The Mood:** "Desperate Majesty." A heavy, cinematic atmosphere. The UI should not feel like a menu, but like a window into a dying world.
-*   **The Living Background:** The site background is a deep black to embers-fire gradient (radial-gradient from `#050505` to a smoldering `#2A1005`). This pulses slightly using a CSS keyframe animation to simulate flickering firelight.
-*   **Key Visual Elements:** High-grain stone textures, CSS-animated "ash" particles drifting upward, and heavy use of box-shadow: inset to make class boxes look like they are burning from within.
+*   **The Living Background:** The site background features a deep black to smoldering fire gradient (radial-gradient originating from `50% 120%`). 
+*   **Fire Glow:** A specialized `.fire-glow` element provides a low-frequency, irregular flickering light (jittery blur and scale shifts) to simulate a real fire source at the bottom of the screen.
+*   **Key Visual Elements:** High-grain stone textures, multi-colored "ash" and "ember" particles (reds, golds, oranges, and white sparks) drifting upward with a distinct rightward wind-drift.
+*   **Atmospheric Depth:** To prioritize UI legibility, all embers and fire effects are positioned *behind* the interactive slots (`z-index: 1`).
 *   **Character Imagery (Idle):** To maintain the "window" aesthetic without the images feeling cramped, character portraits in the idle state feature a soft **radial-gradient mask** that fades the edges, preventing them from touching the box borders.
 *   **Evaluation Standard:** REJECT any "clean" or "minimalist" UI. If the background is a solid flat color, it fails the "Alive" requirement.
 
@@ -25,10 +27,11 @@
 *   **The 5-Column Grid:** The screen is divided into 5 vertical "Slabs" (Class boxes) with **slightly rounded edges (12px)**.
 *   **The "Ember" Hover Logic:**
     1.  **Reactive Layout:** The hovered column expands its `grid-column` width (e.g., from 1fr to 1.5fr) while the others slightly shrink.
-    2.  **The Glow Beam:** A rotating `#F59E0B` (Estus Orange) **gradient beam** travels all the way around the perimeter of the box, featuring a soft glow effect.
+    2.  **The Glow Beam:** A slow-moving (8s), double-faded segment (soft head and tail) that travels around the perimeter. It features a slow 3s pulse in opacity (40% to 100%) for a "smoldering" feel.
     3.  **Visual Expansion:** On hover, the character image loses its fade-mask and scales up to 1.05x, while the image corners round further to **30px** to match the "active" stage aesthetic.
     4.  **Quick Info:** A summary of the top two stats fades in directly **below** the class name at the top of the box at 0.3s.
     5.  **Upright Alignment:** Class names are always upright (not rotated) and positioned at the top of the slot.
+*   **The "Active Hover" Blur:** When a character is selected and the user hovers over the large stage screen, the background (living-bg, fire-glow, and embers) blurs and darkens to focus all attention on the character stats and lore.
 *   **The "Weighty" Click:** On selection:
     1.  **Collapse:** The 4 unselected classes "collapse" to the far edges (5% width each).
     2.  **Hide Text:** To prevent cut-off letters, all text in the 5% width collapsed boxes is completely hidden (`opacity: 0`).

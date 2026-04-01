@@ -98,13 +98,13 @@ function createEmbers() {
     const container = document.getElementById('ashContainer');
     if (!container) return;
     
-    const count = 30;
+    const count = 60;
     for (let i = 0; i < count; i++) {
         const ember = document.createElement('div');
         ember.className = 'ember-particle';
         
-        const size = Math.random() * 3 + 2;
-        const duration = Math.random() * 4 + 6;
+        const size = Math.random() * 4 + 2;
+        const duration = Math.random() * 3 + 4;
         const delay = Math.random() * 10;
         const left = Math.random() * 100;
 
@@ -116,7 +116,7 @@ function createEmbers() {
         ember.style.animationDelay = `${delay}s`;
         
         // Vary colors for "Estus" feel
-        const colors = ['#ff4500', '#f59e0b', '#ff8c00'];
+        const colors = ['#ff4500', '#f59e0b', '#ff8c00', '#ff0000', '#ffd700', '#ffffff'];
         ember.style.color = colors[Math.floor(Math.random() * colors.length)];
         ember.style.backgroundColor = 'currentColor';
         
