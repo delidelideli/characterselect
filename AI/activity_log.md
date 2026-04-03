@@ -90,6 +90,12 @@
 - Added a 1px blur to idle portraits to enhance the "shrine alcove" aesthetic.
 - Ensured these effects transition away cleanly on hover.
 
+### Update 23: UI Optimization & Banner Refinement
+- **Full-Width Banners:** Updated `.name-scroll` to `width: 100%` and removed the hide-on-hover logic. This completely masks the glowing borders in the corners and ensures names remain legible during interaction.
+- **Centered Typography:** Refactored class names into flex containers for perfect centering.
+- **Typewriter Speed:** Doubled the lore reveal speed (8ms character / 15ms rune) for a more responsive user experience.
+- **Artifact Removal:** Increased banner opacity and z-index to eliminate light leakage from the rotating border animation.
+
 ---
 
 ## Correction & Re-prompt Log

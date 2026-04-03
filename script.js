@@ -2,8 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.getElementById('characterGrid');
     const slots = document.querySelectorAll('.character-slot');
     const confirmBtn = document.getElementById('confirmSelection');
+    const backBtn = document.getElementById('backBtn');
     const ashContainer = document.getElementById('ashContainer');
     let selectedIndex = null;
+    let typewriterTimeout = null;
 
     // Helper to update grid columns
     const updateGridColumns = (focusIndex, type = 'hover') => {
@@ -37,7 +39,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Weighty Click Logic
         slot.addEventListener('click', () => {
-            // If already selected, maybe toggle back? For now, just re-select
+            if (selectedIndex === index) return;
+            
             selectedIndex = index;
             
             slots.forEach(s => s.classList.remove('active'));
@@ -45,10 +48,66 @@ document.addEventListener('DOMContentLoaded', () => {
             
             updateGridColumns(index, 'click');
             
-            // Show confirm button
+            // Show buttons
             confirmBtn.classList.add('visible');
+            backBtn.classList.add('visible');
+
+            // Trigger lore typewriter
+            const loreElement = slot.querySelector('.lore-text');
+            if (loreElement) {
+                typewriterLore(loreElement);
+            }
         });
     });
+
+    backBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        selectedIndex = null;
+        slots.forEach(s => s.classList.remove('active'));
+        updateGridColumns(null, 'hover');
+        confirmBtn.classList.remove('visible');
+        backBtn.classList.remove('visible');
+        
+        // Clear typewriter
+        if (typewriterTimeout) clearTimeout(typewriterTimeout);
+        document.querySelectorAll('.lore-text').forEach(el => el.textContent = '');
+    });
+
+    function typewriterLore(element) {
+        const text = element.getAttribute('data-lore');
+        if (!text) return;
+
+        if (typewriterTimeout) clearTimeout(typewriterTimeout);
+        element.textContent = '';
+        let i = 0;
+
+        const runes = 'ᚠᚢᚦᚨᚱᚲᚷᚹᚺᚻᚼᚽᚾᚿᛁᛂᛃᛄᛅᛆᛇᛈᛉᛊᛋᛌᛍᛎᛏᛐᛑᛒᛓᛔᛕᛖᛗᛘᛙᛚᛛᛜᛝᛞᛟ';
+
+        function type() {
+            if (i < text.length) {
+                const char = text.charAt(i);
+                if (char === ' ') {
+                    element.textContent += ' ';
+                    i++;
+                    typewriterTimeout = setTimeout(type, 8);
+                } else {
+                    const rune = runes[Math.floor(Math.random() * runes.length)];
+                    const span = document.createElement('span');
+                    span.textContent = rune;
+                    span.style.color = 'var(--accent)';
+                    element.appendChild(span);
+
+                    typewriterTimeout = setTimeout(() => {
+                        span.textContent = char;
+                        span.style.color = 'inherit';
+                        i++;
+                        typewriterTimeout = setTimeout(type, 8);
+                    }, 15);
+                }
+            }
+        }
+        type();
+    }
 
     confirmBtn.addEventListener('click', () => {
         if (selectedIndex !== null) {

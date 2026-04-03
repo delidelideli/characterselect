@@ -35,8 +35,9 @@
     1.  **Reactive Layout:** The hovered column expands its `grid-column` width (e.g., from 1fr to 1.5fr) while the others slightly shrink.
     2.  **The Glow Beam:** A slow-moving (8s), double-faded segment (soft head and tail) that travels around the perimeter. It features a slow 3s pulse in opacity (40% to 100%) for a "smoldering" feel.
     3.  **Visual Expansion:** On hover, the character image loses its fade-mask and scales up to 1.05x, while the image corners round further to **30px** to match the "active" stage aesthetic.
-    4.  **Quick Info:** A summary of the top two stats fades in directly **below** the class name at the top of the box at 0.3s.
-    5.  **Upright Alignment:** Class names are always upright (not rotated) and positioned at the top of the slot.
+    4.  **Quick Info:** A summary of the top two stats fades in directly **below** the class name banner at 0.3s.
+    5.  **Full-Width Banner:** Class names are contained within a persistent, full-width `.name-scroll` banner at the top of the slot (`top: 3.2rem`). The banner is 100% width to completely mask glowing borders and uses an opaque background (`#120a07`) for maximum legibility.
+    6.  **Typewriter Optimization:** Lore text is revealed with an accelerated typewriter effect (8ms per character) for a snappier, responsive feel while maintaining the runic transition animation.
 *   **The "Active Hover" Blur:** When a character is selected and the user hovers over the large stage screen, the background (living-bg, fire-glow, and embers) blurs and darkens to focus all attention on the character stats and lore.
 *   **The "Weighty" Click:** On selection:
     1.  **Collapse:** The 4 unselected classes "collapse" to the far edges (5% width each).
