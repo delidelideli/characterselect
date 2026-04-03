@@ -96,6 +96,14 @@
 - **Typewriter Speed:** Doubled the lore reveal speed (8ms character / 15ms rune) for a more responsive user experience.
 - **Artifact Removal:** Increased banner opacity and z-index to eliminate light leakage from the rotating border animation.
 
+### Update 24: Audio Investigation & Cleanup
+- **Investigation:** Identified broken external audio links (403 Forbidden on Mixkit) and a logic inversion in the audio toggle.
+- **Cleanup:** Per user request, removed all audio-related HTML elements, JavaScript initialization, and CSS styling to provide a clean slate for future implementation.
+
+### Update 25: Typography Stability (Name Shift Fix)
+- **Problem:** Character names shifted upwards during the lore typewriter effect due to flexbox vertical centering in the `.stage-lore` container.
+- **Fix:** Changed `justify-content` to `flex-start` and implemented fixed `padding-top: 6rem`. This ensures the class name remains perfectly stationary while the lore text reveals below it.
+
 ---
 
 ## Correction & Re-prompt Log
